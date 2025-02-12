@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Business from './components/Business.jsx'
 import BusinessList from './components/BusinessList.jsx'
+import SearchBar from './components/SearchBar.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="app">
         < BusinessList />
+        < SearchBar />
         
     </div>
   )
