@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import './SearchBar.css'
 
 export default function SearchBar() {
     const sortOptions = {
@@ -7,14 +8,18 @@ export default function SearchBar() {
         "Most Reviewed": "most-reviewed"
     };
     return (
-        <div className="search-bar">
-            <input type="text" placeholder="Search terms" />
-            <input type="text" placeholder="Location" />
-            <button>Search</button>
-            <div className="sort-options">
-                {Object.keys(sortOptions).map(option => (
-                    <button key={sortOptions[option]}>{option}</button>
-                ))};
+        <div className="SearchBar">
+            <div className="SortOptions">
+                <ul>{Object.keys(sortOptions).map(option => (
+                    <li key={sortOptions[option]}>{option}</li>
+                ))}</ul>
+            </div>
+            <div className="SearchFields">
+                <input type="text" placeholder="Search terms" />
+                <input type="text" placeholder="Location" />
+            </div>
+            <div className="Submit">
+                <a>Search</a>
             </div>
         </div>
     );
