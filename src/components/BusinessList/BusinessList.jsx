@@ -2,6 +2,7 @@ import React from 'react';
 import Business from '../Business/Business.jsx'
 import "./BusinessList.css"
 
+// list of businesses featured
 const businesses = [
     {
         imageSrc: "https://content.codecademy.com/programs/react/ravenous/pizza.jpg",
@@ -93,6 +94,7 @@ const businesses = [
     }
 ];
 
+// collection of business cards
 export default function BusinessList() {
     return (
         <div className="BusinessList">

@@ -1,7 +1,9 @@
 import React from 'react'
 import "./Business.css"
 
+// business card
 function Business() {
+    // static placeholder business info
     const business = {
         imageSrc: "https://content.codecademy.com/programs/react/ravenous/pizza.jpg",
         name: "Caló Kitchen & Tequila",
