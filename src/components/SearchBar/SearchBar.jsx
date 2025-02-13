@@ -1,6 +1,7 @@
-import React from 'react'
-import './SearchBar.css'
+import React from 'react';
+import './SearchBar.css';
 
+// sorting and searching section
 export default function SearchBar() {
     const sortOptions = {
         "Best Match": "best-match",
