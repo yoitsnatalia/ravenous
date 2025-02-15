@@ -13,6 +13,15 @@ export default function SearchBar() {
     const [location, setLocation] = useState("");
     const [sortBy, setSortBy] = useState(sortOptions["Best Match"]);
 
+    const handleChange = ({target}) => {
+        const {id, value} = target;
+        if (id === "search-terms") {
+            setSearchTerms(value);
+        } else if (id === "location") {
+            setLocation(value);
+        }
+    }
+
     return (
         <div className="SearchBar">
             <div className="SortOptions">
@@ -23,8 +32,8 @@ export default function SearchBar() {
                 ))}</ul>
             </div>
             <div className="SearchFields">
-                <input type="text" placeholder="Search terms" />
-                <input type="text" placeholder="Location" />
+                <input id="search-terms" type="text" placeholder="Search terms" onChange={handleChange}/>
+                <input id="location" type="text" placeholder="Location" onChange={handleChange}/>
             </div>
             <div className="Submit">
                 <a>Search</a>
