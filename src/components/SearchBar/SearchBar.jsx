@@ -22,6 +22,12 @@ export default function SearchBar() {
         }
     }
 
+    const handleSearch = (event) => {
+        // prevent page refresh
+        event.preventDefault();
+        console.log(`Searching Yelp with ${searchTerms}, ${location}, and ${sortBy}`);
+    }
+
     return (
         <div className="SearchBar">
             <div className="SortOptions">
@@ -36,7 +42,7 @@ export default function SearchBar() {
                 <input id="location" type="text" placeholder="Location" onChange={handleChange}/>
             </div>
             <div className="Submit">
-                <a>Search</a>
+                <a onClick={handleSearch}>Search</a>
             </div>
         </div>
     );
