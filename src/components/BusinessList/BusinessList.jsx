@@ -1,11 +1,11 @@
 import React from 'react';
 import Business from '../Business/Business.jsx';
-import "./BusinessList.css";
+import styles from "./BusinessList.module.css";
 
 // collection of business cards
 export default function BusinessList(props) {
     return (
-        <div className="BusinessList">
+        <div className={styles.BusinessList}>
             {props.businesses.map((business, index) => (
                 <Business 
                     key={index}

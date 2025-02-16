@@ -7,7 +7,7 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-.Business .imageContainer {
+.Business .ImageContainer {
     height: 20rem;
     margin-bottom: 1rem;
     display: flex;
@@ -17,7 +17,7 @@
     background: #000;
 }
 
-.imageContainer img {
+.ImageContainer img {
     width: 100%;
 }
 
@@ -27,13 +27,13 @@
     font-weight: 600;
 }
 
-.info {
+.Info {
     display: flex;
     justify-content: space-between;
     margin: 0.5rem 0;
 }
 
-.info p {
+.Info p {
     font-size: 0.75rem;
     font-weight: 300;
     line-height: 1rem;
@@ -41,29 +41,29 @@
     display: flex;
 }
 
-.reviews {
+.Reviews {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-.reviews h3 {
+.Reviews h3 {
     margin: 0;
     color: #cca353;
     font-weight: 600;
 }
 
-.reviews .category {
+.Reviews .category {
     font-size: 1rem;
 }
 
-.address {
+.Address {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.reviews .rating {
+.Reviews .Rating {
     font-size: 0.88rem;
     line-height: 1rem;
   }

@@ -78,6 +78,8 @@
     color: #ffffff;
     font-weight: 600;
     transition: background-color 0.5s;
+    border: 0;
+    font-size: 0.85rem;
 }
 
 .Submit button:hover {
