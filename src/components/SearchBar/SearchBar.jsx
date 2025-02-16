@@ -22,7 +22,7 @@ export default function SearchBar() {
         }
     }
 
-    const handleSearch = (event) => {
+    const handleSubmit = (event) => {
         // prevent page refresh
         event.preventDefault();
         console.log(`Searching Yelp with ${searchTerms}, ${location}, and ${sortBy}`);
@@ -41,13 +41,15 @@ export default function SearchBar() {
                     <li className={getSortByClass(sortOptions[option])} key={sortOptions[option]} onClick={() => setSortBy(sortOptions[option])}>{option}</li>
                 ))}</ul>
             </div>
-            <div className={styles.SearchFields}>
-                <input id="search-terms" type="text" placeholder="Search terms" onChange={handleChange}/>
-                <input id="location" type="text" placeholder="Location" onChange={handleChange}/>
-            </div>
-            <div className={styles.Submit}>
-                <a onClick={handleSearch}>Search</a>
-            </div>
+            <form onSubmit={handleSubmit}>
+                <div className={styles.SearchFields}>
+                    <input id="search-terms" type="text" placeholder="Search Businesses" onChange={handleChange}/>
+                    <input id="location" type="text" placeholder="Where?" onChange={handleChange}/>
+                </div>
+                <div className={styles.Submit}>
+                    <button type="submit">Search</button>
+                </div>
+            </form>
         </div>
     );
 }
