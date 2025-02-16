@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SearchBar.css';
+import styles from './SearchBar.module.css';
 
 // sorting and searching section
 export default function SearchBar() {
@@ -28,20 +28,24 @@ export default function SearchBar() {
         console.log(`Searching Yelp with ${searchTerms}, ${location}, and ${sortBy}`);
     }
 
+    const getSortByClass = (sortOption) => {
+        return sortBy === sortOption ? styles.active : "";
+    }
+
     return (
-        <div className="SearchBar">
-            <div className="SortOptions">
+        <div className={styles.SearchBar}>
+            <div className={styles.SortOptions}>
                 {/* create a list object per sort option */}
                 <ul>{Object.keys(sortOptions).map(option => (
                     // keep track of which sort option is active
-                    <li className={sortBy === sortOptions[option] ? "active" : ""} key={sortOptions[option]} onClick={() => setSortBy(sortOptions[option])}>{option}</li>
+                    <li className={getSortByClass(sortOptions[option])} key={sortOptions[option]} onClick={() => setSortBy(sortOptions[option])}>{option}</li>
                 ))}</ul>
             </div>
-            <div className="SearchFields">
+            <div className={styles.SearchFields}>
                 <input id="search-terms" type="text" placeholder="Search terms" onChange={handleChange}/>
                 <input id="location" type="text" placeholder="Location" onChange={handleChange}/>
             </div>
-            <div className="Submit">
+            <div className={styles.Submit}>
                 <a onClick={handleSearch}>Search</a>
             </div>
         </div>
