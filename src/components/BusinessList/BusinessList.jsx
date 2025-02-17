@@ -1,6 +1,6 @@
 import React from 'react';
 import Business from '../Business/Business.jsx';
-import styles from "./BusinessList.module.css";
+import styles from './BusinessList.module.css';
 
 // collection of business cards
 export default function BusinessList(props) {

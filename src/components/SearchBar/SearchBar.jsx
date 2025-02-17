@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import styles from './SearchBar.module.css';
+import Search from '../utils/Yelp.jsx';
 
 // sorting and searching section
 export default function SearchBar() {
     const sortOptions = {
-        "Best Match": "best-match",
-        "Highest Rated": "highest-rated",
-        "Most Reviewed": "most-reviewed"
+        "Best Match": "best_match",
+        "Highest Rated": "rating",
+        "Most Reviewed": "review_count"
     };
 
     const [searchTerms, setSearchTerms] = useState("");
     const [location, setLocation] = useState("");
-    const [sortBy, setSortBy] = useState(sortOptions["Best Match"]);
+    const [sortBy, setSortBy] = useState("best_match");
 
     const handleChange = ({target}) => {
         const {id, value} = target;
@@ -26,6 +27,7 @@ export default function SearchBar() {
         // prevent page refresh
         event.preventDefault();
         console.log(`Searching Yelp with ${searchTerms}, ${location}, and ${sortBy}`);
+        Search(searchTerms, location, sortBy);
     }
 
     const getSortByClass = (sortOption) => {
@@ -47,7 +49,7 @@ export default function SearchBar() {
                     <input id="location" type="text" placeholder="Where?" onChange={handleChange}/>
                 </div>
                 <div className={styles.Submit}>
-                    <button type="submit">Search</button>
+                    <button id="submit" type="submit">Search</button>
                 </div>
             </form>
         </div>
