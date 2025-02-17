@@ -50,7 +50,7 @@ export default function SearchBar(props) {
             </div>
             <form onSubmit={handleSubmit}>
                 <div className={styles.SearchFields}>
-                    <input id="search-terms" type="text" placeholder="Search Businesses" onChange={handleChange}/>
+                    <input id="search-terms" type="text" placeholder="Cuisine?" onChange={handleChange}/>
                     <input id="location" type="text" placeholder="Where?" onChange={handleChange}/>
                 </div>
                 <div className={styles.Submit}>
