@@ -1,5 +1,5 @@
 // personal Yelp API key
-const yelpKey = "dIp81e2NPq-nYbOfXEihy8syFvMBbByDhA3Nv8yEzHCidtcdGn8AIt3wmfR6I5W2izd5lEiwQPuggHfBbJAggfviC7CDZ8SrEwiCYz0WA8IYk-1whGdxSm-JzLCyZ3Yx";
+const yelpKey = import.meta.env.VITE_YELP_API_KEY;
 const yelpBaseUrl = "https://api.yelp.com/v3";
 
 // GET request to Yelp API for businesses related to user search inputs

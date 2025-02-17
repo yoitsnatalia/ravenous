@@ -1,9 +1,8 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 # ravenous
+
+## Description
+A website for finding restaurants according to desired cuisine and location. Results can be sorted by best match, highest ratings, or number of reviews. Uses Yelp API.
+
+## Set Up
+Open ravenous, then "npm install" and "npm run dev".
+Visit https://cors-anywhere.herokuapp.com/corsdemo and click “Request temporary access to the demo server”.
