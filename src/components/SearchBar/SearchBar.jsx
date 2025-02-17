@@ -23,11 +23,13 @@ export default function SearchBar() {
         }
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         // prevent page refresh
         event.preventDefault();
         console.log(`Searching Yelp with ${searchTerms}, ${location}, and ${sortBy}`);
-        Search(searchTerms, location, sortBy);
+        const businesses = await Search(searchTerms, location, sortBy);
+        console.log(businesses);
+        return businesses;
     }
 
     const getSortByClass = (sortOption) => {
