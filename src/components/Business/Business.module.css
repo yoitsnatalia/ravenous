@@ -8,13 +8,15 @@
 }
 
 .Business .ImageContainer {
-    height: 20rem;
+    height: 12rem;
     margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
     background: #000;
+    border: 4px solid #b0904f;
+    border-radius: 4px;
 }
 
 .ImageContainer img {

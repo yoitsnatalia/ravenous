@@ -2,18 +2,20 @@ import React, { useState } from 'react';
 import styles from './SearchBar.module.css';
 import Search from '../utils/Yelp.jsx';
 
-// sorting and searching section
-export default function SearchBar() {
-    const sortOptions = {
-        "Best Match": "best_match",
-        "Highest Rated": "rating",
-        "Most Reviewed": "review_count"
-    };
+const sortOptions = {
+    "Best Match": "best_match",
+    "Highest Rated": "rating",
+    "Most Reviewed": "review_count"
+};
 
+// sorting and searching section
+export default function SearchBar(props) {
+    // states for input
     const [searchTerms, setSearchTerms] = useState("");
     const [location, setLocation] = useState("");
     const [sortBy, setSortBy] = useState("best_match");
 
+    // track search bar input
     const handleChange = ({target}) => {
         const {id, value} = target;
         if (id === "search-terms") {
@@ -23,15 +25,16 @@ export default function SearchBar() {
         }
     }
 
+    // request and package new Yelp data upon submit
     const handleSubmit = async (event) => {
         // prevent page refresh
         event.preventDefault();
-        console.log(`Searching Yelp with ${searchTerms}, ${location}, and ${sortBy}`);
         const businesses = await Search(searchTerms, location, sortBy);
-        console.log(businesses);
+        props.updateBusinesses(businesses);
         return businesses;
     }
 
+    // track sort option selected
     const getSortByClass = (sortOption) => {
         return sortBy === sortOption ? styles.active : "";
     }
@@ -51,7 +54,7 @@ export default function SearchBar() {
                     <input id="location" type="text" placeholder="Where?" onChange={handleChange}/>
                 </div>
                 <div className={styles.Submit}>
-                    <button id="submit" type="submit">Search</button>
+                    <button type="submit">Search</button>
                 </div>
             </form>
         </div>

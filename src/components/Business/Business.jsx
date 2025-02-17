@@ -18,7 +18,7 @@ function Business(props) {
                 <div className={styles.Reviews}>
                     <h3 className={styles.Category}>{props.category.toUpperCase()}</h3>
                     <h3 className={styles.Rating}>{`${props.rating} stars`}</h3>
-                    <p>{props.reviewCount}</p>
+                    <p>{`${props.reviewCount} reviews`}</p>
                 </div>
             </div>
         </div>

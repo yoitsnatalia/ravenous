@@ -34,3 +34,9 @@ input:focus {
   margin: 0;
 }
  
+.App p {
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+  color: grey;
+}
